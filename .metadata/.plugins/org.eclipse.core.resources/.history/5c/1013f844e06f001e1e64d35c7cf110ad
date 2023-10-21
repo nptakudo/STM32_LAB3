@@ -219,7 +219,6 @@ static void MX_GPIO_Init(void)
 void HAL_TIM_PeriodElapsedCallBack(TIM_HandleTypeDef *htim){
 	timerRun();
 	getKeyInput();
-
 }
 /* USER CODE END 4 */
 
