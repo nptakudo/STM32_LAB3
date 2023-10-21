@@ -17,7 +17,7 @@ int KeyReg3 = NORMAL_STATE;
 int TimerForKeyPress = 200;
 
 void subKeyProcess(){
-	button1_flag = 1;
+	HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
 }
 
 void getKeyInput(){

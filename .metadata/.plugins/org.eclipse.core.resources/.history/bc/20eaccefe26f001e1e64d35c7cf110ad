@@ -6,9 +6,7 @@
  */
 
 #include "button.h"
-
-int button1_flag = 0;
-
+#include "main.h"
 int KeyReg0 = NORMAL_STATE;
 int KeyReg1 = NORMAL_STATE;
 int KeyReg2 = NORMAL_STATE;
@@ -17,7 +15,7 @@ int KeyReg3 = NORMAL_STATE;
 int TimerForKeyPress = 200;
 
 void subKeyProcess(){
-	button1_flag = 1;
+	HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
 }
 
 void getKeyInput(){
@@ -36,7 +34,10 @@ void getKeyInput(){
 			TimerForKeyPress--;
 			if(TimerForKeyPress == 0){
 				//TODO
+				if(KeyReg2 == PRESSED_STATE){
 					KeyReg3 = NORMAL_STATE;
+
+				}TimerForKeyPress = 200;
 			}
 		}
 	}
