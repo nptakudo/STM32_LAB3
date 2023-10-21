@@ -16,6 +16,13 @@ int KeyReg2 = NORMAL_STATE;
 int KeyReg3 = NORMAL_STATE;
 int TimerForKeyPress = 200;
 
+int isButton1Pressed(){
+	if(button1_flag == 1){
+		button1_flag = 0;
+		return 1;
+	}else return 0;
+}
+
 void subKeyProcess(){
 	button1_flag = 1;
 }
@@ -28,14 +35,12 @@ void getKeyInput(){
 		if(KeyReg3 != KeyReg2){
 			KeyReg3 = KeyReg2;
 			if(KeyReg2 == PRESSED_STATE){
-				//TODO
 				subKeyProcess();
 				TimerForKeyPress = 200;
 			}
 		}else{
 			TimerForKeyPress--;
 			if(TimerForKeyPress == 0){
-				//TODO
 					KeyReg3 = NORMAL_STATE;
 			}
 		}
