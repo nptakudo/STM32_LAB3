@@ -1,0 +1,10 @@
+/*
+ * global.c
+ *
+ *  Created on: Oct 21, 2023
+ *      Author: takudo
+ */
+
+#include "global.h"
+int status = 0;
+
